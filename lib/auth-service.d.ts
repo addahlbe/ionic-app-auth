@@ -6,7 +6,6 @@ import { IAuthConfig } from './auth-configuration';
 import { Browser } from "./auth-browser";
 import { StorageBackend, Requestor, AuthorizationServiceConfiguration, TokenResponse, AuthorizationRequest, AuthorizationResponse, AuthorizationError, TokenRequestHandler } from '@openid/appauth';
 import { Observable } from 'rxjs';
-import { AuthObserver, BaseAuthObserver } from './auth-observer';
 export interface IAuthService {
     signIn(authExtras?: StringMap, state?: string): void;
     signOut(state?: string, revokeTokens?: boolean): void;
@@ -16,9 +15,6 @@ export interface IAuthService {
     endSessionCallback(): void;
     loadTokenFromStorage(): void;
     getValidToken(buffer?: number): Promise<TokenResponse>;
-    addActionObserver(observer: BaseAuthObserver): void;
-    addActionListener(func: (action: IAuthAction) => void): AuthObserver;
-    removeActionObserver(observer: BaseAuthObserver): void;
 }
 export declare class AuthService implements IAuthService {
     protected browser: Browser;
@@ -27,9 +23,6 @@ export declare class AuthService implements IAuthService {
     private _configuration?;
     private _authConfig?;
     private _authSubject;
-    private _actionHistory;
-    private _session;
-    private _authSubjectV2;
     private _tokenSubject;
     private _userSubject;
     private _authenticatedSubject;
