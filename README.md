@@ -1,4 +1,4 @@
-# Ionic AppAuth
+# Ionic App Auth
 
 Ionic AppAuth is a implementation of the [AppAuth-JS](https://github.com/openid/AppAuth-JS) for Ionic Users.
 It includes code extensions for core cordova plugins to run the Ionic app such as [Advanced HTTP](https://github.com/silkimen/cordova-plugin-advanced-http) and [SafariViewController](https://github.com/EddyVerbruggen/cordova-plugin-safariviewcontroller). This is a copy from [Ionic AppAuth](https://github.com/wi3land/ionic-appauth) with hopes for better maitenance.
@@ -12,7 +12,7 @@ This library is intended to be as flexible with compatibility as Ionic v7 is att
 Run following command to install Ionic App Auth in your project.
 
 ```bash
-npm install ionic-appauth --save
+npm i @addahlbe/ionic-app-auth
 ```
 
 ## Examples

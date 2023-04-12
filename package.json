@@ -1,6 +1,6 @@
 {
   "name": "@addahlbe/ionic-app-auth",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Integration for OpenId/AppAuth-JS into Ionic",
   "main": "lib/index.js",
   "scripts": {
@@ -16,6 +16,7 @@
     "type": "git",
     "url": "git+https://github.com/addahlbe/ionic-app-auth.git"
   },
+  "readme": "https://github.com/addahlbe/ionic-app-auth#readme",
   "homepage": "https://github.com/addahlbe/ionic-app-auth#readme",
   "keywords": [
     "OAuth",
