@@ -1,5 +1,5 @@
 {
-  "name": "ionic-appauth",
+  "name": "ionic-app-auth",
   "version": "0.9.0",
   "description": "Integration for OpenId/AppAuth-JS into Ionic",
   "main": "lib/index.js",
@@ -14,9 +14,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:wi3land/ionic-appauth.git"
+    "url": "https://github.com/addahlbe/ionic-app-auth"
   },
-  "homepage": "https://github.com/wi3land/ionic-appauth#readme",
+  "homepage": "https://github.com/addahlbe/ionic-app-auth#readme",
   "keywords": [
     "OAuth",
     "OIDC",
@@ -27,15 +27,13 @@
     "Capacitor",
     "Cordova",
     "OpenID Connect",
-    "Angular",
-    "React",
-    "Vue"
+    "Angular"
   ],
   "author": {
-    "name": "wi3land"
+    "name": "addahlbe"
   },
   "bugs": {
-    "url": "https://github.com/wi3land/ionic-appauth/issues"
+    "url": "https://github.com/addahlbe/ionic-app-auth/issues"
   },
   "license": "MIT",
   "devDependencies": {

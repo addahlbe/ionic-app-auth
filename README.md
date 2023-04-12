@@ -18,7 +18,7 @@ npm install ionic-appauth --save
 ## Examples
 
 Demos have been moved into the main repository to centralise issues.
-- Angular/Capacitor: https://github.com/wi3land/ionic-appauth/tree/master/demos/angular-capacitor<br />
+- Angular/Capacitor: https://github.com/addahlbe/ionic-app-auth/tree/master/demos/angular-capacitor<br />
 
 **NOTE**: You can use [OktaDev Schematics](https://github.com/oktadev/schematics#ionic) to install the code from the Angular examples above. Only Capacitor is supported. The installation isn't Okta-specific, it just prompts you for an `issuer` and `clientId` and works with Auth0 too!
 
