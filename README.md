@@ -1,14 +1,11 @@
 # Ionic AppAuth
 
-[![Build](https://github.com/wi3land/ionic-appauth/actions/workflows/main.yml/badge.svg)](https://github.com/wi3land/ionic-appauth/actions/workflows/main.yml)
-
-[![Publish](https://github.com/wi3land/ionic-appauth/actions/workflows/publish.yml/badge.svg)](https://github.com/wi3land/ionic-appauth/actions/workflows/publish.yml)
-
 Ionic AppAuth is a implementation of the [AppAuth-JS](https://github.com/openid/AppAuth-JS) for Ionic Users.
-It includes code extensions for core cordova plugins to run the Ionic app such as [Advanced HTTP](https://github.com/silkimen/cordova-plugin-advanced-http) and [SafariViewController](https://github.com/EddyVerbruggen/cordova-plugin-safariviewcontroller).
+It includes code extensions for core cordova plugins to run the Ionic app such as [Advanced HTTP](https://github.com/silkimen/cordova-plugin-advanced-http) and [SafariViewController](https://github.com/EddyVerbruggen/cordova-plugin-safariviewcontroller). This is a copy from [Ionic AppAuth](https://github.com/wi3land/ionic-appauth) with hopes for better maitenance.
+
 
 The cordova plugins are optional and can be replaced with Angular/React/Vue http handlers and/or Capacitor Plugins.
-This library is intended to be as flexible with compatibility as Ionic v6 is attempting to be.
+This library is intended to be as flexible with compatibility as Ionic v7 is attempting to be.
 
 ## Installation
 
@@ -21,12 +18,7 @@ npm install ionic-appauth --save
 ## Examples
 
 Demos have been moved into the main repository to centralise issues.
-- Angular/Cordova: https://github.com/wi3land/ionic-appauth/tree/master/demos/angular-cordova<br />
 - Angular/Capacitor: https://github.com/wi3land/ionic-appauth/tree/master/demos/angular-capacitor<br />
-- React: https://github.com/wi3land/ionic-appauth/tree/master/demos/react<br />
-- Vue: https://github.com/wi3land/ionic-appauth/tree/master/demos/vue<br />
-- Vanilla: (To Be Completed)
-- Ionic V3: (To Be Completed)
 
 **NOTE**: You can use [OktaDev Schematics](https://github.com/oktadev/schematics#ionic) to install the code from the Angular examples above. Only Capacitor is supported. The installation isn't Okta-specific, it just prompts you for an `issuer` and `clientId` and works with Auth0 too!
 
