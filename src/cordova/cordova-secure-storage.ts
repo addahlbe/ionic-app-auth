@@ -7,7 +7,7 @@ import { SecureStorage, SecureStorageObject } from '@awesome-cordova-plugins/sec
 export class CordovaSecureStorage extends StorageBackend {
 
     private localData: any = {};
-    private KEYSTORE: string = "SecretStore";
+    private KEYSTORE = "SecretStore";
 
     public async SecureStorageExists() : Promise<boolean>{ 
         await CordovaDocument.ready();
@@ -15,7 +15,7 @@ export class CordovaSecureStorage extends StorageBackend {
     }
 
     public async hasRecord(store: SecureStorageObject, key: string){
-        let keys : string[] = await store.keys();
+        const keys : string[] = await store.keys();
         return (keys.indexOf(key) > -1)
      }
 

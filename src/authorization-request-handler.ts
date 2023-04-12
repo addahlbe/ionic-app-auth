@@ -37,11 +37,11 @@ export class IonicAuthorizationRequestHandler extends AuthorizationRequestHandle
     }
 
     public async performAuthorizationRequest(configuration: AuthorizationServiceConfiguration, request: AuthorizationRequest) : Promise<void> {
-        let handle = this.generateRandom.generateRandom(10);
+        const handle = this.generateRandom.generateRandom(10);
         this.storage.setItem(AUTHORIZATION_REQUEST_HANDLE_KEY, handle);
         this.storage.setItem(authorizationRequestKey(handle), JSON.stringify(await request.toJson()));
-        let url = this.buildRequestUrl(configuration, request);
-        let returnedUrl : string | undefined = await this.browser.showWindow(url, request.redirectUri); 
+        const url = this.buildRequestUrl(configuration, request);
+        const returnedUrl : string | undefined = await this.browser.showWindow(url, request.redirectUri); 
 
         //callback may come from showWindow or via another method
         if (returnedUrl != undefined) {
@@ -51,18 +51,18 @@ export class IonicAuthorizationRequestHandler extends AuthorizationRequestHandle
     }
 
     protected async completeAuthorizationRequest(): Promise<AuthorizationRequestResponse> {
-        let handle = await this.storage.getItem(AUTHORIZATION_REQUEST_HANDLE_KEY);
+        const handle = await this.storage.getItem(AUTHORIZATION_REQUEST_HANDLE_KEY);
         
         if (!handle) {
             throw new Error("Handle Not Available");
         }
 
-        let request : AuthorizationRequest = this.getAuthorizationRequest(await this.storage.getItem(authorizationRequestKey(handle)));
-        let queryParams =  this.getQueryParams(await this.storage.getItem(AUTHORIZATION_RESPONSE_KEY));
+        const request : AuthorizationRequest = this.getAuthorizationRequest(await this.storage.getItem(authorizationRequestKey(handle)));
+        const queryParams =  this.getQueryParams(await this.storage.getItem(AUTHORIZATION_RESPONSE_KEY));
         this.removeItemsFromStorage(handle);
 
-        let state: string | undefined = queryParams['state'];
-        let error: string | undefined = queryParams['error'];
+        const state: string | undefined = queryParams['state'];
+        const error: string | undefined = queryParams['error'];
 
         if (state !== request.state) {
             throw new Error("State Does Not Match");
@@ -85,7 +85,7 @@ export class IonicAuthorizationRequestHandler extends AuthorizationRequestHandle
     }
 
     private getAuthorizationError(queryParams : StringMap): AuthorizationError  {
-        let authorizationErrorJSON : AuthorizationErrorJson = {
+        const authorizationErrorJSON : AuthorizationErrorJson = {
             error: queryParams['error'],
             error_description: queryParams['error_description'],
             error_uri: undefined,
@@ -95,7 +95,7 @@ export class IonicAuthorizationRequestHandler extends AuthorizationRequestHandle
     }
 
     private getAuthorizationResponse(queryParams : StringMap): AuthorizationResponse {
-        let authorizationResponseJSON : AuthorizationResponseJson = {
+        const authorizationResponseJSON : AuthorizationResponseJson = {
             code: queryParams['code'], 
             state: queryParams['state']
         }
@@ -110,10 +110,10 @@ export class IonicAuthorizationRequestHandler extends AuthorizationRequestHandle
 
     private getQueryParams(authResponse: string | null) : StringMap {
         if(authResponse != null){
-            let querySide : string = authResponse.split('#')[0];
-            let parts: string[] = querySide.split('?');
+            const querySide : string = authResponse.split('#')[0];
+            const parts: string[] = querySide.split('?');
             if (parts.length !== 2) throw new Error("Invalid auth response string");
-            let hash = parts[1];
+            const hash = parts[1];
             return this.utils.parseQueryString(hash);
         }else{
             return {};

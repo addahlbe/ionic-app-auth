@@ -1,4 +1,4 @@
-import { TokenResponse, RevokeTokenRequest } from '@openid/appauth';
+import { TokenResponse } from '@openid/appauth';
 
 export enum AuthActions {
     Init = "Init",

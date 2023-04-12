@@ -11,7 +11,7 @@ export class IonicUserInfoHandler implements UserInfoHandler {
         ) {}
 
     public async performUserInfoRequest(configuration: AuthorizationServiceConfiguration, token : TokenResponse): Promise<any> {
-        let settings : JQueryAjaxSettings = {
+        const settings : JQueryAjaxSettings = {
             url : configuration.userInfoEndpoint,
             dataType: 'json',
             method: 'GET',

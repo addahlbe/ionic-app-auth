@@ -27,7 +27,7 @@ export class EndSessionRequest {
     }
 
   toJson(): EndSessionRequestJson {
-    let json: EndSessionRequestJson = {idTokenHint: this.idTokenHint, postLogoutRedirectURI : this.postLogoutRedirectURI };
+    const json: EndSessionRequestJson = {idTokenHint: this.idTokenHint, postLogoutRedirectURI : this.postLogoutRedirectURI };
 
     if (this.state) {
       json['state'] = this.state;

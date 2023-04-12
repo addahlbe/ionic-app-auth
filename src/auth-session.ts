@@ -8,7 +8,7 @@ export interface IAuthSession {
 }
 
 export class DefaultAuthSession implements IAuthSession {
-    isAuthenticated: boolean = false;    
+    isAuthenticated = false;    
     token?: TokenResponse = undefined;
     user?: any = undefined;
     error?: string = undefined;

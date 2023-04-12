@@ -39,18 +39,6 @@ export declare class AuthService implements IAuthService {
     protected requestHandler: AuthorizationRequestHandler;
     protected endSessionHandler: EndSessionHandler;
     constructor(browser?: Browser, storage?: StorageBackend, requestor?: Requestor);
-    /**
-     * @deprecated independant observers have been replaced by Rxjs
-     * this will be removed in a future release
-     * please use $ suffixed observers in future
-     */
-    get history(): IAuthAction[];
-    /**
-     * @deprecated independant observers have been replaced by Rxjs
-     * this will be removed in a future release
-     * please use $ suffixed observers in future
-     */
-    get session(): import("./auth-session").IAuthSession;
     get token$(): Observable<TokenResponse>;
     get isAuthenticated$(): Observable<boolean>;
     get initComplete$(): Observable<boolean>;
@@ -81,22 +69,4 @@ export declare class AuthService implements IAuthService {
     authorizationCallback(callbackUrl: string): void;
     endSessionCallback(): void;
     getValidToken(buffer?: number): Promise<TokenResponse>;
-    /**
-     * @deprecated independant observers have been replaced by Rxjs
-     * this will be removed in a future release
-     * please use $ suffixed observers in future
-     */
-    addActionListener(func: (action: IAuthAction) => void): AuthObserver;
-    /**
-     * @deprecated independant observers have been replaced by Rxjs
-     * this will be removed in a future release
-     * please use $ suffixed observers in future
-     */
-    addActionObserver(observer: BaseAuthObserver): void;
-    /**
-     * @deprecated independant observers have been replaced by Rxjs
-     * this will be removed in a future release
-     * please use $ suffixed observers in future
-     */
-    removeActionObserver(observer: BaseAuthObserver): void;
 }

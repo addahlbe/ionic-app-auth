@@ -14,20 +14,20 @@ export class IonicEndSessionHandler implements EndSessionHandler {
         ) {}
 
     public async performEndSessionRequest(configuration: AuthorizationServiceConfiguration, request : EndSessionRequest): Promise<string | undefined> {
-      let url = this.buildRequestUrl(configuration, request);
+      const url = this.buildRequestUrl(configuration, request);
       return this.browser.showWindow(url, request.postLogoutRedirectURI); 
     }
 
     private buildRequestUrl(configuration: AuthorizationServiceConfiguration,request: EndSessionRequest) {
-      let requestMap: StringMap = {
+      const requestMap: StringMap = {
         'id_token_hint': request.idTokenHint,
         'post_logout_redirect_uri': request.postLogoutRedirectURI,
         'state': request.state,
       };
   
-      let query = this.utils.stringify(requestMap);
-      let baseUrl = configuration.endSessionEndpoint;
-      let url = `${baseUrl}?${query}`;
+      const query = this.utils.stringify(requestMap);
+      const baseUrl = configuration.endSessionEndpoint;
+      const url = `${baseUrl}?${query}`;
       return url;
     }
 }
