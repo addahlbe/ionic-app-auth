@@ -1,5 +1,5 @@
 {
-  "name": "ionic-app-auth",
+  "name": "@addahlbe/ionic-app-auth",
   "version": "1.0.0",
   "description": "Integration for OpenId/AppAuth-JS into Ionic",
   "main": "lib/index.js",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/addahlbe/ionic-app-auth"
+    "url": "git+https://github.com/addahlbe/ionic-app-auth.git"
   },
   "homepage": "https://github.com/addahlbe/ionic-app-auth#readme",
   "keywords": [
@@ -29,9 +29,7 @@
     "OpenID Connect",
     "Angular"
   ],
-  "author": {
-    "name": "addahlbe"
-  },
+  "author": "addahlbe",
   "bugs": {
     "url": "https://github.com/addahlbe/ionic-app-auth/issues"
   },
@@ -73,5 +71,8 @@
     "@capacitor/preferences": "^4.0.2",
     "@ionic/storage": "^3.0.6",
     "capacitor-secure-storage-plugin": "^0.8.1"
+  },
+  "directories": {
+    "lib": "lib"
   }
 }
