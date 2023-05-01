@@ -68,7 +68,7 @@
     "@awesome-cordova-plugins/safari-view-controller": "^6.3.0",
     "@awesome-cordova-plugins/secure-storage": "^6.3.0",
     "@capacitor/browser": "^4.1.1",
-    "@capacitor/core": "4.7.3",
+    "@capacitor/core": "4.8.0",
     "@capacitor/preferences": "^4.0.2",
     "@ionic/storage": "^3.0.6",
     "capacitor-secure-storage-plugin": "^0.8.1"
